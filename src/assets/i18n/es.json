@@ -1,0 +1,13 @@
+{
+	"general": {
+		"id": "ID",
+		"nif": "NIF",
+		"plusvalias": "PLUSVALÍAS",
+		"si": "Sí",
+		"no": "No",
+		"aviso": "Aviso",
+		"aceptar": "Aceptar",
+		"cancelar": "Cancelar",
+		"eliminar": "Eliminar"
+	}
+}

@@ -1,0 +1,7 @@
+@use '../../scss/colores/coloresGenerales';
+
+::ng-deep .p-dialog-title {
+	color: coloresGenerales.$azulSecundario;
+	font-family: 'michroma', sans-serif;
+	font-size: 20px;
+}
