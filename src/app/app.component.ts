@@ -9,13 +9,6 @@ import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
 	providers: [DialogService, DynamicDialogRef]
 })
 export class AppComponent {
-	title = 'CalculoPlusvaliaFront';
-
-	// Le especificas que el "changeValues" que recibe sea tipo booleano de valor "true".
-	changeValues: boolean = true;
-
-	nifOrganizacion: string = '';
-
 	constructor(private translate: TranslateService) {
 		translate.addLangs(['es']);
 		translate.setDefaultLang('es');
