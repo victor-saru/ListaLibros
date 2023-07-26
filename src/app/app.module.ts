@@ -15,13 +15,14 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { MainWindowComponent } from './main-window/main-window.component';
 
+
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
 	return new TranslateHttpLoader(http);
 }
 
 @NgModule({
-	declarations: [MainWindowComponent],
+	declarations: [AppComponent, MainWindowComponent],
 	imports: [
 		AppRoutingModule,
 		MaterialModules,

@@ -8,15 +8,12 @@
 // ICONOS DE BOOTSTRAP
 @import url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css');
 
+/* Estilos generales para el HTML y body */
 html,
 body {
-	width: 100%;
 	height: 100%;
 	margin: 0;
 	padding: 0;
+	width: 100%;
+	//overflow: hidden; /* Evita el scroll horizontal y vertical en el body */
 }
-
-
-
-
-
