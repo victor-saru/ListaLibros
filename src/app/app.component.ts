@@ -12,6 +12,7 @@ import { BookService } from './services/book.service';
 })
 export class AppComponent implements OnInit {
 	books: Book[] = [];
+	categories: string[] = [];
 
 	constructor(
 		private translate: TranslateService,
@@ -24,17 +25,39 @@ export class AppComponent implements OnInit {
 
 	ngOnInit(): void {
 		this.getBooks();
-		// const jsonObject = this.fetchJsonFile('../assets/json/books.json');
 	}
 
 	getBooks() {
+		// Obtener todos los libros
 		this.bookService.getBooks().subscribe({
 			next: (books) => {
 				this.books = books;
+
+				// Una vez obtenidos todos los libros vamos a recoger las categorias
+				this.getCategories();
 			},
 			error: (error) => {
 				console.log('Error fetching books:', error);
 			}
+		});
+	}
+
+	getCategories() {
+		// Obtener todas las categorías de los libros sin repetición
+		this.categories = this.books.reduce((result: string[], book: Book) => {
+			book.categories.forEach((category) => {
+				if (!result.includes(category)) {
+					result.push(category);
+				}
+			});
+
+			return result;
+		}, []);
+
+		this.categories.push('All');
+		this.categories.sort((a, b) => {
+			// Compara las cadenas de forma insensible a mayúsculas y minúsculas (orden alfabético)
+			return a.localeCompare(b, undefined, { sensitivity: 'base' });
 		});
 	}
 }

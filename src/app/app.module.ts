@@ -14,6 +14,7 @@ import { PrimeNgModules } from './primeng.modules';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { MainWindowComponent } from './main-window/main-window.component';
+import {MatSliderModule} from '@angular/material/slider';
 
 
 // AoT requires an exported function for factories
@@ -28,6 +29,7 @@ export function HttpLoaderFactory(http: HttpClient) {
 		MaterialModules,
 		PrimeNgModules,
 		HttpClientModule,
+		MatSliderModule,
 
 		TranslateModule.forRoot({
 			loader: {

@@ -1,33 +1,80 @@
-<main class="g-0 p-0 m-0 border-3 h-100 w-100 border border-warning">
+<main class="g-0 border-3 border border-warning h-100 pt-4 pb-5 pe-2 ps-4">
 	<!-- MAIN ROW -->
-	<div class="row main g-0 border border-danger border-3 main">
+	<div class="row g-0 border border-danger border h-100">
 		<!-- LEFT COLUMN -->
-		<div class="col-8 border border-danger d-flex flex-column">
-			<!-- TITLE ROW -->
-			<div class="row g-0"><h1>8 libros disponibles</h1></div>
-			<!-- SUBTITLE ROW -->
-			<div class="row g-0"><h4>2 en la lista de lectura</h4></div>
-			<!-- FILTERS ROW -->
-			<div class="row">
-				<!-- PAGES FILTER COL -->
-				<div class="col-6">PAGES FILTER</div>
-				<!-- GENDER FILTER COL -->
-				<div class="col-6">GENDER FILTER</div>
+		<div class="col-8 border border-3 border-warning d-flex flex-column h-100">
+			<div class="border border-danger">
+				<!-- TITLE ROW -->
+				<div class="row g-0 border border-danger">
+					<h1>8 libros disponibles</h1>
+				</div>
+				<!-- SUBTITLE ROW -->
+				<div class="row g-0 border border-danger">
+					<h5>2 en la lista de lectura</h5>
+				</div>
+				<!-- FILTERS ROW -->
+				<div class="row g-0 border border-danger">
+					<!-- PAGES FILTER COL -->
+					<div class="col-6 d-flex flex-column">
+						<!-- PAGES TITLE  -->
+						<h4>Filtrar por páginas</h4>
+						<!-- PAGES FILTER -->
+						<div class="border border-danger">
+							<mat-slider
+								class="w-50 g-0"
+								min="10"
+								max="2000"
+								step="10"
+								showTickMarks
+								discrete
+							>
+								<input matSliderThumb />
+							</mat-slider>
+						</div>
+					</div>
+
+					<!-- GENDER FILTER COL -->
+					<div class="col-6 d-flex flex-column">
+						<!-- GENDER TITLE  -->
+						<h4>Filtrar por páginas</h4>
+						<!-- GENDER FILTER -->
+						<div class="border border-danger">
+							<mat-form-field>
+								<mat-select [(value)]="selected">
+									<mat-option
+										*ngFor="let category of categoriesArray"
+										[value]="category"
+									>
+										{{ category }}
+									</mat-option>
+								</mat-select>
+							</mat-form-field>
+						</div>
+					</div>
+				</div>
 			</div>
+
 			<!-- BOOKS ROW -->
-			<div class="row g-0 flex-grow-1 books-container border border-danger">
-				<div class="d-grid grid-template">
-					<div *ngFor="let book of booksArray" class="book">
-						<img [src]="book.thumbnailUrl" alt="{{ book.title }}" />
+			<div class="row g-0 border border-danger books-container booksRow h-75">
+				<div class="d-grid grid-template books-container">
+					<div
+						*ngFor="let book of booksArray"
+						class="border border-danger d-flex justify-content-center"
+					>
+						<img
+							[src]="book.thumbnailUrl"
+							alt="{{ book.title }}"
+							height="250px"
+						/>
 					</div>
 				</div>
 			</div>
 		</div>
 
 		<!-- RIGHT COLUMN -->
-		<div class="col-4 border border-danger d-flex flex-column">
+		<div class="col-4 g-0 border border-danger d-flex flex-column">
 			<!-- LIST ROW -->
-			<div class="row"><h1>Lista de lectura</h1></div>
+			<div class="row g-0"><h1>Lista de lectura</h1></div>
 			<!-- BOOK LIST ROW -->
 			<div class="row border border-danger g-0 flex-grow-1"></div>
 		</div>

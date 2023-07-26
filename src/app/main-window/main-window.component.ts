@@ -7,8 +7,9 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class MainWindowComponent implements OnInit {
 	@Input() booksArray: any;
+	@Input() categoriesArray: any;
 
-	ngOnInit(): void {
-		let a = this.booksArray;
-	}
+	selected: string = 'All'
+
+	ngOnInit(): void {}
 }
